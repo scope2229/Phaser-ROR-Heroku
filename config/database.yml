@@ -7,6 +7,8 @@
 default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  usename: Rails.application.credentials.DB[:dbUsername]
+  password: Rails.application.credentials.DB[:dbPassword]
   timeout: 5000
 
 development:
